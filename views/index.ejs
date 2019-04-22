@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+  <body>
+
+    <ul>
+        <% for (let i = 0; i < hamburgers.length; i++) { %>
+        <li>
+            <a href="/hamburger/<%hamburgers[i]._id%>"><%=hamburgers[i].name%></a>
+            color: <%=hamburgers[i].color%>
+            <form action="/hamburger/<%=hamburgers[i]._id%>" method="post">
+              <button type="submit">Delete</button>
+            </form>
+        </li>
+
+        <%}%>
+    </ul>
+
+    <a href="/hamburger/new">Create new hamburger topping</a>
+    
+  </body>
+</html>
